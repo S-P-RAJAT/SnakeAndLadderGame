@@ -41,7 +41,9 @@ public class SnakeAndLadder {
 		position += result;
 		if(position<0) {
 			position = 0;
-		}
+		} else if(position>100) {
+			position -= result;
+		} 
 		System.out.println(name + " POSITION: "+position+"\n");
 	}
 
@@ -49,7 +51,7 @@ public class SnakeAndLadder {
 		System.out.println("Welcome to Snake and Ladder Game!");
 		System.out.println("");
 		SnakeAndLadder player1 = new SnakeAndLadder("Player 1");
-		while (player1.position < 100) {
+		while (player1.position != 100) {
 			player1.play();
 		}
 	}
