@@ -53,16 +53,31 @@ public class SnakeAndLadder {
 			position -= result;
 		}
 		System.out.println("\nPOSITION: " + position + "\n");
+		if (option == LADDER && position!=100) {
+			this.play();
+		}
 	}
 
 	public static void main(String[] args) {
+
 		System.out.println("Welcome to Snake and Ladder Game!");
 		System.out.println("");
 		SnakeAndLadder player1 = new SnakeAndLadder("Player 1");
-		while (player1.position != 100) {
+		SnakeAndLadder player2 = new SnakeAndLadder("Player 2");
+
+		while (true) {
 			player1.play();
+			if(player1.position == 100) {
+				System.out.print("The number of times the dice was played to win the game by ");
+				System.out.println(player1.name + ": "+player1.getCount());
+				break;
+			}
+			player2.play();
+			if(player2.position == 100) {
+				System.out.print("The number of times the dice was played to win the game by ");
+				System.out.println(player2.name + ": "+player2.getCount());
+				break;
+			} 
 		}
-		System.out.println("The number of times the dice was played to"
-				+ " win the game by " + player1.name + ": "+player1.getCount());
 	}
 }
