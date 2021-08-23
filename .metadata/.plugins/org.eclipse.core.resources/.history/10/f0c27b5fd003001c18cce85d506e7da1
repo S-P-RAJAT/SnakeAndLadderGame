@@ -4,7 +4,7 @@ public class SnakeAndLadder {
 	int position;
 	int count;
 	String name;
-	public static final int NO_PLAY = 0;
+	public static final int NOPLAY = 0;
 	public static final int LADDER = 1;
 	public static final int SNAKE = 2;
 
@@ -29,7 +29,7 @@ public class SnakeAndLadder {
 
 		int option = ((int) (Math.floor(Math.random() * 10) % 3));
 		switch (option) {
-		case NO_PLAY:
+		case NOPLAY:
 			result = 0;
 			System.out.print("\t OPTION: NOPLAY");
 			break;
@@ -53,7 +53,7 @@ public class SnakeAndLadder {
 			position -= result;
 		}
 		System.out.println("\nPOSITION: " + position + "\n");
-		if (option == LADDER && position != 100) {
+		if (option == LADDER && position!=100) {
 			this.play();
 		}
 	}
@@ -67,17 +67,17 @@ public class SnakeAndLadder {
 
 		while (true) {
 			player1.play();
-			if (player1.position == 100) {
+			if(player1.position == 100) {
 				System.out.print("The number of times the dice was played to win the game by ");
-				System.out.println(player1.name + ": " + player1.getCount());
+				System.out.println(player1.name + ": "+player1.getCount());
 				break;
 			}
 			player2.play();
-			if (player2.position == 100) {
+			if(player2.position == 100) {
 				System.out.print("The number of times the dice was played to win the game by ");
-				System.out.println(player2.name + ": " + player2.getCount());
+				System.out.println(player2.name + ": "+player2.getCount());
 				break;
-			}
+			} 
 		}
 	}
 }
